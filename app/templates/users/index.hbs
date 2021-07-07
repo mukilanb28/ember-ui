@@ -1,18 +1,25 @@
 {{page-title 'User'}}
-  <ToggleSwitch @class="switch-toggle-layer" @toggleState={{action "toggleArchiveState"}} @archived={{users.archived}}></ToggleSwitch>
-<div class="container">
-  <div class="columns is-centered">
+
+<div class='switch-toggle-layer'>
+  <ToggleButton
+    @toggleState={{this.toggleArchiveState}}
+    @isArchived={{this.users.archived}}
+  />
+</div>
+
+<div class='container'>
+  <div class='columns is-centered'>
 
     {{#each @model as |user|}}
-      <div class="column">
+      <div class='column'>
 
-        <LinkTo @route="users.user" @model={{user}}>
-          <div class="user-select is-220px">
+        <LinkTo @route='users.user' @model={{user}}>
+          <div class='user-select is-220px'>
             <img
-              class="is-pulled-left"
+              class='is-pulled-left'
               src={{user.image}}
-              width="60px"
-              alt="profile-image"
+              width='60px'
+              alt='profile-image'
             />
             <p>{{user.name}}</p>
           </div>
