@@ -7,10 +7,12 @@ module('Acceptance | users', function(hooks) {
 
   test('visiting /users', async function(assert) {
     await visit('/');
+    assert.equal(currentURL(), '/'); //application route
     
     await click('.button'); //See all users button click
+    await assert.equal(currentURL(), '/users');
 
-    await visit('/users/1'); //Click any 1st user card
+    await click('.user-select'); //Click any 1st user card
     
     await click('.red-theme'); //Click Archive button
     assert.dom('.red-theme').doesNotExist();
