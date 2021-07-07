@@ -7,10 +7,10 @@ module('Acceptance | users', function(hooks) {
 
   test('visiting /users', async function(assert) {
     await visit('/');
-    //assert.equal(currentURL(), '/'); //application route
+    assert.equal(currentURL(), '/'); //application route
     
-    //await click('.button'); //See all users button click
-    //await assert.equal(currentURL(), '/users');
+    await click('.button'); //See all users button click
+    await assert.equal(currentURL(), '/users');
 
     //await click('.user-select'); //Click any 1st user card
     
