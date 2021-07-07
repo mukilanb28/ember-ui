@@ -1,4 +1,9 @@
 {{page-title 'User'}}
+
+  <div class="switch-toggle-layer">
+    <ToggleButton @toggleState={{action "toggleArchiveState"}} @archived={{users.archived}}></ToggleButton>
+  </div>
+  
 <div class="container">
   <div class="columns is-centered">
 
