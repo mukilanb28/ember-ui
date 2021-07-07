@@ -1,18 +1,18 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import { alias } from '@ember/object/computed';
+import { tracked } from '@glimmer/tracking';
 
 export default class ArchiveButtonComponent extends Component {
 
-     @alias('args.model.archived') isArchived;
+     @tracked isArchived;
 
     get label() {
-        return this.args.model?.archived ? "UnArchive" : "Archive";
+        return this.args.isArchived ? "UnArchive" : "Archive";
     }
 
     @action
     toggleArchiveState(){
-        this.args.model.set("archived", !this.args.model.archived);
+        this.args.model.set("archived", !this.args.isArchived);
         this.args.model.save();
     }
 }

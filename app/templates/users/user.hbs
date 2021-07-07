@@ -23,7 +23,7 @@
           Example Value:
           {{@model.value}}
         </p>
-        <ArchiveButton @model={{model}}>
+        <ArchiveButton @model={{model}} @isArchived={{model.archived}}>
         </ArchiveButton>
 
         {{!-- Place the component to archive/unarchive users here --}}
