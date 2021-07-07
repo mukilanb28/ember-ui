@@ -1,10 +1,15 @@
-<div class="switch-toggle switch-3 switch-candy">
+<div class='switch-toggle switch-3 switch-candy'>
 
-  <input id="archived" name="state-d" type="radio" checked={{eq this.args.archived 0}}/>
-  <label for="archived" {{action "toggleState" 0}}>Users</label>
+  <input
+    id='archived'
+    name='state-d'
+    type='radio'
+    checked={{eq @isArchived 0}}
+  />
+  <label for='archived' {{on 'click' this.showUsers}}>Users</label>
 
-  <input id="all" name="state-d" type="radio"  checked={{eq this.args.archived 1}} />
-  <label for="all" class="disabled" {{action "toggleState" 1}}>All Users</label>
+  <input id='all' name='state-d' type='radio' checked={{eq @isArchived 1}} />
+  <label for='all' class='disabled' {{on 'click' this.showAllUsers}}>All Users</label>
 
 </div>
 {{yield}}
