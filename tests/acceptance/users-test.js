@@ -10,7 +10,7 @@ module('Acceptance | users', function(hooks) {
     
     await click('.button'); //See all users button click
 
-    await click('.user-select'); //Click any 1st user card
+    await visit('/users/1'); //Click any 1st user card
     
     await click('.red-theme'); //Click Archive button
     assert.dom('.red-theme').doesNotExist();
