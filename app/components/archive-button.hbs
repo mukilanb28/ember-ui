@@ -1,0 +1,3 @@
+<button type="button" class={{if @isArchived "green-theme" "red-theme" }} {{on "click"
+    this.toggleArchiveState}}>{{this.label}}</button>
+{{yield}}
